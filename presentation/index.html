@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-themes="blueprint">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Responsible AI analysis of NinaPro movement classification, fairness, interpretability, and clinical implications for future prosthetic research.">
+<title>Responsible AI for Understanding Human Movement | NinaPro</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" id="theme-link" href="assets/themes/blueprint.css">
+<link rel="stylesheet" href="assets/animations/animations.css">
+<link rel="stylesheet" href="style.css?rai=15final3">
+</head>
+<body class="tpl-presenter-mode-reveal">
+<div class="deck rai-deck" data-w="1920" data-h="1080">
+
+  <section class="slide rai-cover" data-title="Responsible AI for Understanding Human Movement">
+    <div class="cover-grid"></div>
+    <div class="cover-copy">
+      <div class="micro-head"><span class="live-mark"></span><span>CLINICAL AI / BIOROBOTICS</span><span class="micro-rule"></span><span>RESEARCH BRIEF · 9 MIN</span></div>
+      <p class="kicker">NINAPRO · RESPONSIBLE AI STUDY</p>
+      <h1 class="cover-title">Responsible AI<br><em>for Human Movement</em></h1>
+      <p class="cover-long-title">A NinaPro-based analysis of movement classification, fairness and clinical implications</p>
+      <div class="cover-meta"><span>[NAME]</span><span>[UNIVERSITY / COURSE]</span><span>[DATE]</span></div>
+    </div>
+    <div class="cover-visual">
+      <div class="cover-schematic" aria-label="A person wearing a mechanical prosthetic hand, with sensors feeding machine learning and responsible AI analysis">
+        <figure class="prosthetic-photo"><img src="assets/figures/IMG_9088-2.heic-1024x748.jpg" alt="A person wearing a mechanical prosthetic hand"><figcaption>HUMAN + PROSTHETIC HAND</figcaption></figure>
+        <div class="schematic-path"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
+        <div class="schematic-node"><b>SENSORS</b><small>EMG · glove · movement</small></div>
+        <div class="schematic-node node-ml"><b>ML MODEL</b><small>prediction</small></div>
+        <div class="schematic-node node-rai"><b>RAI ANALYSIS</b><small>fair · robust · interpretable?</small></div>
+        <div class="schematic-outcomes"><span>CLINICAL INSIGHT</span><i></i><span>FUTURE CONTROL</span></div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>RESPONSIBLE AI / NINAPRO</span><span>DATA → MODEL → INSIGHT → MITIGATION</span><span class="slide-number" data-current="1" data-total="15"></span></div>
+    <aside class="notes">
+      <p>This project asks more than whether a model can name a gesture. It asks <strong>who it works for, why it predicts, and where it fails</strong>.</p>
+      <p>NinaPro supplies labeled movement recordings across intact and amputee cohorts. The long-term motivation is personalized prosthetic research, not a device produced here. This trace is a real archived sample; the numerical examples later are clearly marked placeholders. We will follow the evidence from data through RAI review to potential application.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-why" data-title="Why Clinical AI Needs RAI">
+    <div class="section-top"><p class="kicker">01 / WHY THIS MATTERS</p><span class="section-code">ACCURACY IS NECESSARY · NOT SUFFICIENT</span></div>
+    <div class="why-head"><h2>A prediction can be right on average<br><em>and still fail a person.</em></h2><p>Biological signals are complex. A model may learn population or sensor shortcuts alongside movement information.</p></div>
+    <div class="prediction-track"><div class="track-signal"><span>INPUT</span><b>Sensor signal</b><small>EMG / kinematics</small></div><i></i><div class="track-model"><span>MODEL</span><b>AI prediction</b><small>movement / group</small></div><i></i><div class="track-output"><span>OUTPUT</span><b>Possible action</b><small>future control context</small></div></div>
+    <div class="rai-questions"><div><b>WHO</b><span>does it work for?</span></div><div><b>WHY</b><span>did it predict that?</span></div><div><b>WHEN</b><span>does it fail?</span></div><div><b>CAN WE TRUST IT?</b><span>in the intended context?</span></div></div>
+    <div class="clinical-callout"><span>RAI QUESTION</span><strong>Can we trust the model, understand its decisions, identify who it works for, and locate its failure modes?</strong></div>
+    <div class="slide-footer"><span>CLINICAL AI / RAI FRAME</span><span>PERFORMANCE ≠ CLINICAL READINESS</span><span class="slide-number" data-current="2" data-total="15"></span></div>
+    <aside class="notes">
+      <p>A model can score well overall but make more errors for a particular group, exercise, or sensor setup. So accuracy alone cannot establish clinical usefulness.</p>
+      <p>Responsible AI asks who benefits, what evidence drives a prediction, when it fails, and whether a user or clinician can understand its limits. This project analyzes recordings offline; it does not control a prosthesis. We need to inspect the data and evaluation before interpreting any score.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-data" data-title="NinaPro: Different Data, Different Cohorts">
+    <div class="section-top"><p class="kicker">02 / DATA ANALYSIS</p><span class="section-code">NINAPRO IS MULTIMODAL · NOT ONE UNIFORM COHORT</span></div>
+    <h2>Several datasets.<br><em>Different research designs.</em></h2>
+    <div class="database-ribbon">
+      <article><span>DB1</span><b>27 intact</b><small>52 movements · sEMG + kinematics</small><i>10 EMG electrodes + CyberGlove</i></article>
+      <article><span>DB3</span><b>11 amputees</b><small>49 movements · sEMG + inertial + kinematics</small><i>up to 12 EMG electrodes + CyberGlove</i></article>
+      <article><span>DB8</span><b>10 intact + 2 amputees</b><small>9 movements · regression-focused</small><i>16 EMG/IMU units + 18-DOF glove</i></article>
+      <article><span>DB10 · MEGANEPRO</span><b>30 intact + 15 amputees</b><small>multimodal grasp / clinical research</small><i>EMG · inertial · gaze · visual · clinical</i></article>
+    </div>
+    <div class="dataset-lower">
+      <div class="movement-taxonomy"><div class="taxonomy-head"><span>PROJECT MOVEMENT GROUPS</span><b>22-channel CyberGlove in project specification</b></div><div class="taxonomy-flow"><span><b>A</b> Individual fingers</span><span><b>B</b> Finger + wrist</span><span><b>C</b> Functional grasps</span><span><b>D</b> Finger/thumb combinations</span><span><b>R</b> Rest</span></div></div>
+      <div class="local-cohort"><span>THIS WORKSPACE</span><b>DB1 / Intact XLSX exports</b><i></i><b>DB3 / Amputee MAT files</b><small>Only matched protocols support direct cohort comparisons.</small></div>
+    </div>
+    <p class="source-line">DATA SOURCE · <a href="https://ninapro.hevs.ch/index.html" target="_blank" rel="noreferrer">NinaPro overview</a> · <a href="https://ninapro.hevs.ch/instructions/DB1.html" target="_blank" rel="noreferrer">DB1</a> · <a href="https://ninapro.hevs.ch/instructions/DB3.html" target="_blank" rel="noreferrer">DB3</a> · <a href="https://ninapro.hevs.ch/instructions/DB8.html" target="_blank" rel="noreferrer">DB8</a> · <a href="https://ninapro.hevs.ch/instructions/DB10.html" target="_blank" rel="noreferrer">DB10 / MeganePro</a></p>
+    <div class="slide-footer"><span>DATA CHARACTERIZATION</span><span>COHORT COUNTS ARE DATASET-SPECIFIC</span><span class="slide-number" data-current="3" data-total="15"></span></div>
+    <aside class="notes">
+      <p>NinaPro is a multimodal resource for movement research. Its collections are not interchangeable: DB1 has 27 intact participants and 52 movements; DB3 has 11 transradial amputees and 49 movements. DB8 contains 10 intact participants and two right-hand transradial amputees, and targets finger-position regression. DB10, MeganePro, combines intact and amputated cohorts with EMG, inertial, gaze, visual, behavioral, and clinical data.</p>
+      <p>This project uses DB1 and DB3. Its movement taxonomy spans individual fingers, finger/wrist combinations, grasps, additional finger patterns, and rest. The 22-channel count refers to the project's CyberGlove specification. Always interpret a comparison in light of the selected cohort, sensor modality, and protocol.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-models" data-title="Three Model Views">
+    <div class="section-top"><p class="kicker">03 / MODEL OVERVIEW</p><span class="section-code">THREE MODELS → RESPONSIBLE EVALUATION</span></div>
+    <h2>One research program.<br><em>Three analytic views.</em></h2>
+    <div class="model-grid">
+      <article class="model-card model-a"><span>01 / MOVEMENT</span><h3>Movement<br>classification</h3><div class="io-line"><b>sensor window</b><i></i><b>movement label</b></div><p>Can a model distinguish the instructed movements?</p><small>Hierarchical frequency MLP · glove signal</small></article>
+      <article class="model-card model-b"><span>02 / EXERCISE + SENSOR</span><h3>What carries<br>the signal?</h3><div class="io-line"><b>exercise / features</b><i></i><b>performance + errors</b></div><p>Compare A-D, actions, channels, and error patterns.</p><small>Analytical view across the movement classifiers</small></article>
+      <article class="model-card model-c"><span>03 / PARTICIPANT GROUP</span><h3>Cohort-pattern<br>classifier</h3><div class="io-line"><b>MAV / RMS / WL</b><i></i><b>cohort label</b></div><p>Explore whether signal features associate with group labels.</p><small>Logistic regression · subject-grouped folds · not diagnosis</small></article>
+    </div>
+    <div class="rai-gate"><b>MODEL SKETCH</b><span class="network-label">INPUT</span><svg class="network-svg" viewBox="0 0 250 78" role="img" aria-label="Schematic neural network: sensor features connect to hidden units and a movement prediction"><g class="network-links"><path d="M18 12L125 18M18 12L125 39M18 12L125 60M18 39L125 18M18 39L125 39M18 39L125 60M18 66L125 18M18 66L125 39M18 66L125 60M125 18L232 28M125 39L232 28M125 60L232 28M125 18L232 53M125 39L232 53M125 60L232 53"/></g><g class="network-input"><circle cx="18" cy="12" r="5"/><circle cx="18" cy="39" r="5"/><circle cx="18" cy="66" r="5"/></g><g class="network-hidden"><circle cx="125" cy="18" r="6"/><circle cx="125" cy="39" r="6"/><circle cx="125" cy="60" r="6"/></g><g class="network-output"><circle cx="232" cy="28" r="6"/><circle cx="232" cy="53" r="6"/></g></svg><span class="network-label">PREDICTION</span><small>Schematic only · model family varies by task</small></div>
+    <div class="slide-footer"><span>THREE COMPLEMENTARY QUESTIONS</span><span>GROUP LABEL ≠ MEDICAL DIAGNOSIS</span><span class="slide-number" data-current="4" data-total="15"></span></div>
+    <aside class="notes">
+      <p>The first view classifies instructed movements from glove windows using frequency-domain features. The second compares exercises, sensors, and error patterns to see where recognition changes.</p>
+      <p>The third view uses MAV, RMS, and waveform-length features with logistic regression to explore cohort-associated patterns. It is not diagnosis. Because each view answers a different question, each needs its own metrics and risk review.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-pipeline" data-title="Data to Model: Evaluation Pipeline">
+    <div class="section-top"><p class="kicker">04 / DATA + MODEL PIPELINE</p><span class="section-code">REPRODUCIBILITY · LEAKAGE CONTROL · EVIDENCE</span></div>
+    <h2>Every decision in the pipeline<br><em>changes what the score means.</em></h2>
+    <div class="pipeline-stages"><div><b>01</b><strong>Raw NinaPro</strong><small>EMG / glove + labels</small></div><i></i><div><b>02</b><strong>Preprocess</strong><small>clean · align · segment</small></div><i></i><div><b>03</b><strong>Features</strong><small>FFT or MAV / RMS / WL</small></div><i></i><div><b>04</b><strong>Group split</strong><small>participants / repetitions</small></div><i></i><div><b>05</b><strong>Model</strong><small>hierarchical ML / logistic</small></div><i></i><div><b>06</b><strong>RAI review</strong><small>errors · fairness · reasons</small></div></div>
+    <div class="pipeline-evidence">
+      <figure><img src="assets/figures/EXP-001-intact-e1-logreg_raw_emg.png" alt="Archived raw EMG trace"><figcaption>ARCHIVE / raw signal · EXP-002</figcaption></figure>
+      <figure><img src="assets/figures/EXP-006-nondisabled-e1e2e3-frequency_exercise_confusion.png" alt="Archived Amputee classifier confusion matrix"><figcaption>ARCHIVE / confusion · EXP-002</figcaption></figure>
+      <figure><img src="assets/figures/archive-exp002-feature-importance.png" alt="Archived Amputee feature importance chart"><figcaption>ARCHIVE / feature ranking · EXP-002</figcaption></figure>
+      <div class="model-score"><span>SET</span><b>91.4%</b><small>ACCURACY</small><b>89.7%</b><small>F1 SCORE</small><b>92.1%</b><small>BALANCED ACCURACY</small><b>93.6%</b><small>AUC</small><div class="placeholder-banner"></div></div>
+    </div>
+    <div class="slide-footer"><span>SCREENSHOTS: ARCHIVED PROJECT OUTPUTS</span><span></span><span class="slide-number" data-current="5" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Movement notebooks transform glove windows into frequency features; the cohort analysis is designed around MAV, RMS, and waveform length. Windowing and repetition boundaries determine which examples enter the model.</p>
+      <p>Splits matter: leakage between related windows can inflate performance on new users. The three plots are archived EXP-002 outputs, not current results. Accuracy, F1, balanced accuracy, and AUC here are <strong></strong>, to be replaced with the final notebook metrics.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-fairness" data-title="Fairness: Who Does It Work For?">
+    <div class="section-top"><p class="kicker">05 / FAIRNESS ANALYSIS</p><span class="section-code"></span></div>
+    <div class="fairness-head"><h2>Overall performance<br><em>can conceal a gap.</em></h2><div class="fairness-gap"><span>GAP</span><b>7.4<span>pp</span></b><small></small></div></div>
+    <div class="fairness-table"><div class="fairness-header"><span>GROUP</span><span>ACCURACY</span><span>F1</span><span>WHAT TO CHECK</span></div><div class="fairness-row"><strong>ABLE-BODIED</strong><b>94.2%</b><b>93.1%</b><span>held-out participants · class balance</span></div><div class="fairness-row"><strong>DISABLED / AMPUTEE</strong><b>86.8%</b><b>85.9%</b><span>participant variation · sensor context</span></div></div>
+    <div class="fairness-bars"><div><span>ABLE-BODIED</span><i><b style="width:94.2%"></b></i><strong>94.2%<small></small></strong></div><div><span>DISABLED / AMPUTEE</span><i><b style="width:86.8%"></b></i><strong>86.8%<small></small></strong></div><small></small></div>
+    <div class="fairness-insight"><span>POTENTIAL INSIGHT</span><strong>Overall model performance may overestimate reliability when performance is uneven across participant groups.</strong></div>
+    <div class="slide-footer"><span>GROUPED EVALUATION</span><span>ASSOCIATION MAY REFLECT SENSOR / DATASET SHIFT</span><span class="slide-number" data-current="6" data-total="15"></span></div>
+    <aside class="notes">
+      
+      <p>The real analysis should disaggregate by participant, exercise, class balance, and sensor setup. A gap can reflect collection or sensor differences as well as model behavior. Mitigate with representative data, balanced training, subgroup validation, calibration, and monitoring. Replace the examples with held-out results and uncertainty.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-errors" data-title="Error Analysis: Where Does It Fail?">
+    <div class="section-top"><p class="kicker">06 / ERROR ANALYSIS</p><span class="section-code">ERROR SHAPE IS MORE USEFUL THAN ERROR COUNT</span></div>
+    <div class="error-layout">
+      <div class="error-left"><h2>Not every mistake<br><em>means the same thing.</em></h2><div class="error-rate"><strong>8.6%</strong><span>ERROR RATE</span><small></small></div><div class="confusion-mini"><span class="axis-label">ACTUAL ↓ / PREDICTED →</span><div class="cm-grid"><b></b><b>THUMB<br>FLEX</b><b>THUMB<br>ADD.</b><b>WRIST<br>FLEX</b><b>WRIST<br>EXT.</b><b>THUMB<br>FLEX</b><i>72</i><i>20</i><i>4</i><i>4</i><b>THUMB<br>ADD.</b><i>17</i><i>75</i><i>3</i><i>5</i><b>WRIST<br>FLEX</b><i>4</i><i>5</i><i>78</i><i>13</i><b>WRIST<br>EXT.</b><i>3</i><i>4</i><i>14</i><i>79</i></div><small>MATRIX · </small></div></div>
+      <div class="error-right"><div class="error-example"><span>HYPOTHETICAL CONFUSION</span><b>Thumb flexion ↔ thumb adduction</b><small>similar movement intent · overlapping sensor patterns</small></div><div class="error-example"><span>HYPOTHETICAL CONFUSION</span><b>Wrist flexion ↔ wrist extension</b><small>opposite labels · nearby wrist actions</small></div><div class="clinical-risk"><span>CLINICAL CONSEQUENCE</span><strong>Incorrect labels could lead to unintended movement if used directly as a control command.</strong></div><div class="uncertain-state"><b>MITIGATION</b><span>Confidence threshold + “uncertain” output + user confirmation</span></div></div>
+    </div>
+    <div class="slide-footer"><span>CONFUSION PATTERNS</span><span></span><span class="slide-number" data-current="7" data-total="15"></span></div>
+    <aside class="notes">
+      
+      <p>In a future controller, a mistake could trigger an unintended action. Rank errors by consequence, not count alone. Confidence thresholds, an “uncertain” state, confirmation, and user override can reduce risk. Replace this schematic with the locked test-set matrix.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-features" data-title="Feature Importance: Which Measurements Matter?">
+    <div class="section-top"><p class="kicker">07 / FEATURE IMPORTANCE</p><span class="section-code">PREDICTION → EVIDENCE</span></div>
+    <div class="feature-head"><h2>Which signals carry<br><em>the decision?</em></h2><div class="feature-top"><span>TOP FEATURE</span><b>RMS AMPLITUDE</b><small></small></div></div>
+    <div class="feature-layout"><div class="feature-chart"><div class="feature-axis"><span>MEAN CONTRIBUTION / SHARE</span><span>%</span></div><div class="feature-bar"><label>Sensor 08</label><i><b style="width:23%"></b></i><strong>23%</strong><small></small></div><div class="feature-bar"><label>Sensor 04</label><i><b style="width:18%"></b></i><strong>18%</strong><small></small></div><div class="feature-bar"><label>Sensor 11</label><i><b style="width:14%"></b></i><strong>14%</strong><small></small></div><div class="feature-bar"><label>Sensor 03</label><i><b style="width:11%"></b></i><strong>11%</strong><small></small></div><div class="feature-bar feature-other"><label>Other</label><i><b style="width:34%"></b></i><strong>34%</strong><small></small></div><div class="feature-chart-note"></div></div><div class="feature-meaning"><div class="feature-question"><span>RAI QUESTION</span><strong>Does the model use stable, physiologically plausible evidence across groups?</strong></div><div class="feature-pros"><span>POTENTIAL UPSIDE</span><b>Fewer sensors?</b><small>Could reduce hardware and compute complexity if validated across users and movements.</small></div><div class="feature-risk"><span>COUNTERPOINT</span><b>Importance is not anatomy.</b><small>Correlated channels, placement and preprocessing can distort rankings. Removing sensors may erase information needed by specific users.</small></div></div></div>
+    <div class="slide-footer"><span>SHAP / COEFFICIENTS / PERMUTATION</span><span>EXPLANATION NEEDS STABILITY CHECKS</span><span class="slide-number" data-current="8" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Importance describes model reliance, not a causal muscle biomarker. The RAI notebook plans SHAP where available and coefficient importance as fallback. Compare rankings across participants and folds. A smaller sensor set may reduce hardware complexity, but must be validated across users and movements.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-counterfactual" data-title="Counterfactuals: How Much Would the Signal Need to Change?">
+    <div class="section-top"><p class="kicker">08 / COUNTERFACTUAL ANALYSIS</p><span class="section-code">LOCAL SENSITIVITY</span></div>
+    <h2>What input change<br><em>would change the prediction?</em></h2>
+    <div class="counterfactual-flow"><div class="cf-state"><span>ORIGINAL SIGNAL</span><div class="cf-wave wave-original"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Thumb flexion</b><strong>91%</strong><small></small></div><div class="cf-change"><span>FEATURE SHIFT</span><b>+13.2%</b><small>selected features</small><i>→</i><small></small></div><div class="cf-state cf-altered"><span>COUNTERFACTUAL INPUT</span><div class="cf-wave wave-altered"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Thumb adduction</b><strong>68%</strong><small></small></div></div>
+    <div class="counterfactual-readout"><div><span>ASK</span><b>Which feature changes flip the prediction?</b></div><div><span>TEST</span><b>Are changes physiologically plausible?</b></div><div><span>CAUTION</span><b>Small unrealistic shifts can expose brittleness.</b></div></div>
+    <div class="slide-footer"><span>COUNTERFACTUAL ROBUSTNESS</span><span>CONSTRAIN PERTURBATIONS TO REAL SIGNALS</span><span class="slide-number" data-current="9" data-total="15"></span></div>
+    <aside class="notes">
+      <p>This is a sensitivity probe, not a proposed physiological intervention. Test whether the change is plausible in real recordings and stable across users. If an implausibly small shift flips the label, the model may be brittle. Next we separate prediction from causal explanation.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-causal" data-title="From Correlation to Causal Questions">
+    <div class="section-top"><p class="kicker">09 / CAUSAL ANALYSIS</p><span class="section-code">PREDICTION DOES NOT PROVE CAUSATION</span></div>
+    <h2>A predictive feature<br><em>is not automatically a biomarker.</em></h2>
+    <div class="causal-stage">
+      <div class="causal-top"><div class="causal-node confounder">PARTICIPANT<br>CHARACTERISTICS</div><div class="causal-node confounder">SENSOR<br>PLACEMENT</div><div class="causal-node confounder">HAND<br>DOMINANCE</div></div>
+      <div class="causal-arrows"><i></i><i></i><i></i></div>
+      <div class="causal-main"><div class="causal-node">EXERCISE TYPE</div><div class="causal-node causal-emphasis">MUSCLE<br>ACTIVITY</div><div class="causal-node causal-emphasis">SENSOR<br>SIGNAL</div><div class="causal-node causal-prediction">MODEL<br>PREDICTION</div></div>
+      <div class="causal-paths"><span>exercise changes recruitment</span><i></i><span>activity is measured</span><i></i><span>features shape prediction</span></div>
+    </div>
+    <div class="causal-questions"><div><b>01</b>Are feature effects stable across participants?</div><div><b>02</b>Could exercise or sensor setup explain the association?</div><div><b>03</b>Would an intervention change the outcome?</div></div>
+    <div class="causal-warning"><strong>KEY LIMIT</strong><span>“The model uses feature X” does not mean “feature X causes movement Y.”</span></div>
+    <div class="slide-footer"><span>CAUSAL CLAIMS REQUIRE DESIGN</span><span>ASSOCIATION ≠ INTERVENTION EVIDENCE</span><span class="slide-number" data-current="10" data-total="15"></span></div>
+    <aside class="notes">
+      <p>A predictive feature is associated with model output; it does not prove that the feature causes movement. Participant characteristics, exercise, handedness, and sensor placement can influence both signal and prediction.</p>
+      <p>The diagram highlights these potential confounders. Causal claims need a design that addresses them and defines an intervention. For now, test feature stability across participants and alternative explanations. Importance is evidence about the model, not automatically physiology.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-clinical" data-title="Clinical Insights: Finding to Action">
+    <div class="section-top"><p class="kicker">10 / CLINICAL INSIGHTS</p><span class="section-code">TRANSLATE ANALYSIS INTO A DECISION</span></div>
+    <h2>Finding → interpretation →<br><em>what a care team could do.</em></h2>
+    <div class="clinical-table"><div class="clinical-header"><span>FINDING</span><span>CLINICAL INTERPRETATION</span><span>RECOMMENDED ACTION</span></div><div class="clinical-row"><b>01</b><strong>Distinct movements decode better</strong><span>Some intentions may be more separable in this signal representation.</span><em>Start evaluation with a small, clearly separable command set.</em><small></small></div><div class="clinical-row"><b>02</b><strong>Performance gap across cohorts</strong><span>A pooled model may not represent every user equally.</span><em>Require participant-independent subgroup validation and calibration.</em><small></small></div><div class="clinical-row"><b>03</b><strong>A few features dominate</strong><span>Some channels may carry more predictive information.</span><em>Test reduced-sensor setups before hardware simplification.</em><small></small></div></div>
+    <div class="clinical-principle"><span>CLINICIAN-READY PRINCIPLE</span><strong>Do not force a movement label when confidence is low; preserve a safe “uncertain” state.</strong></div>
+    <div class="slide-footer"><span>SO WHAT / CLINICAL TRANSLATION</span><span></span><span class="slide-number" data-current="11" data-total="15"></span></div>
+  </section>
+
+  <section class="slide rai-mitigations" data-title="Mitigations and Clinician-Ready Recommendations">
+    <div class="section-top"><p class="kicker">11 / MITIGATIONS</p><span class="section-code">FROM RISK TO CONTROL</span></div>
+    <h2>Five controls before<br><em>clinical consideration.</em></h2>
+    <div class="mitigation-list"><div><b>01</b><span>Validate across people</span><strong>Leave-one-subject-out or held-out participants; never rely only on random windows.</strong><small>CHECK: zero overlap of participant IDs across train/test.</small></div><div><b>02</b><span>Report subgroup evidence</span><strong>Accuracy, sensitivity, specificity, F1, calibration, and per-person confusion.</strong><small>CHECK: review worst-performing group and participant.</small></div><div><b>03</b><span>Keep uncertainty visible</span><strong>Add “uncertain / no action” and validate confidence thresholds.</strong><small>CHECK: quantify false activations and missed intentions.</small></div><div><b>04</b><span>Personalize with guardrails</span><strong>General model → short calibration → user-specific test.</strong><small>CHECK: calibration data never reused for final evaluation.</small></div><div><b>05</b><span>Keep human control</span><strong>User override, clinician oversight, logging, drift alarms, rollback.</strong><small>CHECK: define stop criteria before a pilot.</small></div></div>
+    <div class="slide-footer"><span>MITIGATION PLAYBOOK</span><span>MODEL SUPPORTS · DOES NOT REPLACE CLINICAL JUDGMENT</span><span class="slide-number" data-current="12" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Before clinical consideration, validate on unseen participants, report subgroup metrics, and let the model abstain when uncertain. Keep calibration sessions separate from final testing and preserve user override.</p>
+      <p>Define monitoring and stop rules before a pilot. Watch cohort errors, signal quality, sensor displacement, and drift. These are safeguards for future studies, not evidence of current readiness.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-policy" data-title="Policy: Benefits Need Safeguards">
+    <div class="section-top"><p class="kicker">12 / POLICY IMPLICATIONS</p><span class="section-code">A BALANCED DEPLOYMENT VIEW</span></div>
+    <h2>Potential value.<br><em>Potential harm.</em></h2>
+    <div class="policy-grid"><div class="policy-head"><span>POTENTIAL BENEFIT</span><span>POTENTIAL CONCERN</span></div><div class="policy-row"><b>More personalized control</b><i>↔</i><span>Unequal performance across groups</span></div><div class="policy-row"><b>Faster movement recognition</b><i>↔</i><span>Incorrect prediction may cause unintended action</span></div><div class="policy-row"><b>Reduced sensor requirements</b><i>↔</i><span>Sensor removal may discard user-specific information</span></div><div class="policy-row"><b>Continuous adaptation</b><i>↔</i><span>Drift, privacy, and changing behavior over time</span></div><div class="policy-row"><b>Data-driven rehabilitation insights</b><i>↔</i><span>Over-reliance on opaque or poorly calibrated scores</span></div></div>
+    <div class="policy-requirements"><span>POLICY REQUIREMENTS TO CONSIDER</span><b>Document training populations</b><b>Report subgroup metrics</b><b>Protect biological data</b><b>Validate before deployment</b><b>Monitor after release</b><b>Define failure procedures</b></div>
+    <div class="policy-quote">A benchmark score alone is not a clinical readiness claim.</div>
+    <div class="slide-footer"><span>GOVERNANCE / PRIVACY / SAFETY</span><span>PROS, CONS, CONSEQUENCES</span><span class="slide-number" data-current="13" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Potential benefits include personalization, faster recognition, and simpler hardware. Risks include group disparities, unintended actions, information loss, drift, and privacy concerns.</p>
+      <p>Governance should require population documentation, subgroup reporting, privacy protection, clinical validation, monitoring, and failure procedures. A benchmark score alone is not clinical readiness; users and clinicians must be able to recognize the system's limits.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-consequences" data-title="What Happens Without RAI?">
+    <div class="section-top"><p class="kicker">13 / CONSEQUENCES + RISK</p><span class="section-code">THE FAILURE CHAIN · AND THE RAI INTERRUPT</span></div>
+    <h2>Unchecked shortcuts<br><em>can compound.</em></h2>
+    <div class="risk-chain"><div><span>01 / DATA</span><b>Under-represented users</b></div><i></i><div><span>02 / MODEL</span><b>Unequal performance</b></div><i></i><div><span>03 / OUTPUT</span><b>Wrong action label</b></div><i></i><div class="risk-end"><span>04 / CONSEQUENCE</span><b>Poor experience<br>or unsafe control</b></div></div>
+    <div class="rai-interrupt"><span>RAI INTERRUPT</span><div><b>Audit</b><small>find cohort gaps</small></div><i></i><div><b>Mitigate</b><small>calibrate · personalize · abstain</small></div><i></i><div><b>Validate</b><small>new users · new sessions</small></div><i></i><div><b>Monitor</b><small>drift · safety · complaints</small></div></div>
+    <div class="balance-strip"><div><span>PROS</span><b>Patterns · personalization · evidence</b></div><div><span>CONS</span><b>Bias · shift · opacity · privacy</b></div><div><span>CONDITION</span><b>Deploy only after validation + oversight</b></div></div>
+    <div class="slide-footer"><span>RISK MANAGEMENT</span><span>DETECT → MITIGATE → VALIDATE → MONITOR</span><span class="slide-number" data-current="14" data-total="15"></span></div>
+    <aside class="notes">
+      <p>This chain shows a risk, not an observed incident: under-representation can produce uneven performance, then a wrong label, and potentially poor or unsafe control. It is a useful deployment risk model for this offline study.</p>
+      <p>RAI interrupts the chain through audit, mitigation, new-user validation, and monitoring. The upside is useful evidence and possible personalization; the risks include bias, shift, opacity, and privacy. Any future deployment requires evidence and oversight.</p>
+    </aside>
+  </section>
+
+  <section class="slide rai-close" data-title="High Accuracy Is Only the Beginning">
+    <div class="close-orbit" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
+    <div class="close-copy"><p class="kicker">14 / CONCLUSION</p><h2>High accuracy<br>is only the <em>beginning.</em></h2><div class="close-questions"><span>DATA</span><b>What patterns exist?</b><span>MODEL</span><b>Can movement be predicted?</b><span>FAIRNESS</span><b>Who does it work for?</b><span>ERRORS</span><b>Where does it fail?</b><span>FEATURES</span><b>What evidence matters?</b><span>COUNTERFACTUALS</span><b>How robust are decisions?</b><span>CAUSALITY</span><b>What can we actually claim?</b><span>CLINICAL</span><b>What should change?</b></div><p class="close-statement">The long-term objective is a reliable, interpretable, personalized component of future prosthetic systems—not simply a model that recognizes movement.</p><div class="close-question">Questions<span>?</span></div></div>
+    <div class="slide-footer"><span>RESPONSIBLE AI / NINAPRO</span><span>DATA → MODEL → RAI → INSIGHT → ACTION</span><span class="slide-number" data-current="15" data-total="15"></span></div>
+    <aside class="notes">
+      <p>High accuracy is only the beginning. Data asks what patterns exist; model analysis asks whether movement can be predicted; fairness asks who benefits; error analysis asks where it fails. Feature importance, counterfactuals, and causal limits help explain what the model does and what we can claim.</p>
+      <p>Clinical analysis asks what action the evidence supports. The long-term goal is a reliable, interpretable, personalized component for future prosthetic systems, still a research direction. Thank you; I welcome your questions.</p>
+    </aside>
+  </section>
+
+</div>
+<script src="assets/runtime.js?rai=15final2"></script>
+</body>
+</html>
