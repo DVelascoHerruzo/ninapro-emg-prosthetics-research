@@ -21,11 +21,11 @@
       <p class="kicker">NINAPRO · RESPONSIBLE AI STUDY</p>
       <h1 class="cover-title">Responsible AI<br><em>for Human Movement</em></h1>
       <p class="cover-long-title">A NinaPro-based analysis of movement classification, fairness and clinical implications</p>
-      <div class="cover-meta"><span>[NAME]</span><span>[UNIVERSITY / COURSE]</span><span>[DATE]</span></div>
+      
     </div>
     <div class="cover-visual">
       <div class="cover-schematic" aria-label="A person wearing a mechanical prosthetic hand, with sensors feeding machine learning and responsible AI analysis">
-        <figure class="prosthetic-photo"><img src="assets/figures/IMG_9088-2.heic-1024x748.jpg" alt="A person wearing a mechanical prosthetic hand"><figcaption>HUMAN + PROSTHETIC HAND</figcaption></figure>
+        <figure class="prosthetic-photo"><img src="assets/figures/IMG_9088-2.heic-1024x748.jpg" alt="A person wearing a mechanical prosthetic hand"></figure>
         <div class="schematic-path"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
         <div class="schematic-node"><b>SENSORS</b><small>EMG · glove · movement</small></div>
         <div class="schematic-node node-ml"><b>ML MODEL</b><small>prediction</small></div>
@@ -178,6 +178,10 @@
     <div class="clinical-table"><div class="clinical-header"><span>FINDING</span><span>CLINICAL INTERPRETATION</span><span>RECOMMENDED ACTION</span></div><div class="clinical-row"><b>01</b><strong>Distinct movements decode better</strong><span>Some intentions may be more separable in this signal representation.</span><em>Start evaluation with a small, clearly separable command set.</em><small></small></div><div class="clinical-row"><b>02</b><strong>Performance gap across cohorts</strong><span>A pooled model may not represent every user equally.</span><em>Require participant-independent subgroup validation and calibration.</em><small></small></div><div class="clinical-row"><b>03</b><strong>A few features dominate</strong><span>Some channels may carry more predictive information.</span><em>Test reduced-sensor setups before hardware simplification.</em><small></small></div></div>
     <div class="clinical-principle"><span>CLINICIAN-READY PRINCIPLE</span><strong>Do not force a movement label when confidence is low; preserve a safe “uncertain” state.</strong></div>
     <div class="slide-footer"><span>SO WHAT / CLINICAL TRANSLATION</span><span></span><span class="slide-number" data-current="11" data-total="15"></span></div>
+    <aside class="notes">
+      <p>These three rows show how an analysis could inform a clinical conversation: which actions decode clearly, whether performance varies by cohort, and whether a smaller sensor set is worth testing.</p>
+      <p>The examples are placeholders, so no recommendation should be acted on until the notebook result is reproduced and validated on unseen participants. One practical principle still follows: when a model is uncertain, preserve an abstain state instead of forcing a movement label. That keeps the user in control.</p>
+    </aside>
   </section>
 
   <section class="slide rai-mitigations" data-title="Mitigations and Clinician-Ready Recommendations">
