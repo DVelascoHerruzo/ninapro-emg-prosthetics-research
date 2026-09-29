@@ -1,0 +1,201 @@
+{
+  "experiment_id": "EXP-001-intact-e1-logreg",
+  "cohort": "Intact",
+  "exercise_id": 1,
+  "file_count": 21,
+  "subjects": [
+    "S1",
+    "S10",
+    "S17",
+    "S18",
+    "S19",
+    "S2",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9"
+  ],
+  "samples_per_file_min": 100686,
+  "samples_per_file_max": 101884,
+  "emg_channel_counts": [
+    10
+  ],
+  "glove_channel_counts": [
+    22
+  ],
+  "raw_sample_counts_by_restimulus": {
+    "0": 1196247,
+    "1": 80167,
+    "2": 78062,
+    "3": 90117,
+    "4": 76146,
+    "5": 75615,
+    "6": 77714,
+    "7": 77576,
+    "8": 81055,
+    "9": 74085,
+    "10": 72337,
+    "11": 68409,
+    "12": 77612
+  },
+  "quality_flags": [
+    {
+      "subject": "S10",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 296239,
+      "large_step_channel_events": 247276
+    },
+    {
+      "subject": "S17",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 170148,
+      "large_step_channel_events": 199861
+    },
+    {
+      "subject": "S18",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 225620,
+      "large_step_channel_events": 203545
+    },
+    {
+      "subject": "S19",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 157604,
+      "large_step_channel_events": 142520
+    },
+    {
+      "subject": "S1",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 255696,
+      "large_step_channel_events": 185487
+    },
+    {
+      "subject": "S20",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 84594,
+      "large_step_channel_events": 172780
+    },
+    {
+      "subject": "S21",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 328520,
+      "large_step_channel_events": 134573
+    },
+    {
+      "subject": "S22",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 251413,
+      "large_step_channel_events": 90811
+    },
+    {
+      "subject": "S23",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 126596,
+      "large_step_channel_events": 148920
+    },
+    {
+      "subject": "S24",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 199485,
+      "large_step_channel_events": 161516
+    },
+    {
+      "subject": "S25",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 187787,
+      "large_step_channel_events": 76750
+    },
+    {
+      "subject": "S26",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 283153,
+      "large_step_channel_events": 119563
+    },
+    {
+      "subject": "S27",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 237675,
+      "large_step_channel_events": 105469
+    },
+    {
+      "subject": "S2",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 252927,
+      "large_step_channel_events": 117737
+    },
+    {
+      "subject": "S3",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 603003,
+      "large_step_channel_events": 242895
+    },
+    {
+      "subject": "S4",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 495267,
+      "large_step_channel_events": 240700
+    },
+    {
+      "subject": "S5",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 239603,
+      "large_step_channel_events": 115206
+    },
+    {
+      "subject": "S6",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 175828,
+      "large_step_channel_events": 141855
+    },
+    {
+      "subject": "S7",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 251756,
+      "large_step_channel_events": 149296
+    },
+    {
+      "subject": "S8",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 452966,
+      "large_step_channel_events": 181658
+    },
+    {
+      "subject": "S9",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 398653,
+      "large_step_channel_events": 260883
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "experiment_id": "EXP-005-two-part-action-study",
+  "purpose": "First learn to classify actions within Amputee users; then test whether that Amputee-trained representation transfers to Intact users.",
+  "part_1_amputee_to_amputee": {
+    "accuracy": 0.23483452353528372,
+    "balanced_accuracy": 0.0625409352029301,
+    "macro_f1": 0.060001577085837275,
+    "active_action_accuracy": 0.03609642903184221,
+    "active_action_macro_f1": 0.037091162543408385,
+    "windows": 52092,
+    "active_windows": 31028,
+    "prediction_counts": {
+      "0": 20455,
+      "1": 1265,
+      "2": 2508,
+      "3": 1646,
+      "4": 1608,
+      "5": 4606,
+      "6": 958,
+      "7": 968,
+      "8": 1681,
+      "9": 2713,
+      "10": 1598,
+      "11": 1986,
+      "12": 66,
+      "13": 3892,
+      "14": 568,
+      "15": 871,
+      "16": 2825,
+      "17": 1878
+    },
+    "split": {
+      "train": [
+        "S10",
+        "S11",
+        "S2",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S3",
+        "S9"
+      ],
+      "test": [
+        "S1",
+        "S4",
+        "S8"
+      ]
+    },
+    "training_windows_after_class_cap": 69326
+  },
+  "part_2_amputee_to_intact": {
+    "accuracy": 0.40290501975706133,
+    "balanced_accuracy": 0.04158474536527093,
+    "macro_f1": 0.03341434474812663,
+    "active_action_accuracy": 0.0026799979384631244,
+    "active_action_macro_f1": 0.004064239118088952,
+    "windows": 136660,
+    "active_windows": 58209,
+    "prediction_counts": {
+      "0": 110410,
+      "5": 15489,
+      "15": 10310,
+      "16": 451
+    },
+    "amputee_training_subjects": [
+      "S10",
+      "S11",
+      "S2",
+      "S5",
+      "S6",
+      "S7"
+    ],
+    "intact_test_subjects": [
+      "S1",
+      "S10",
+      "S22",
+      "S4",
+      "S6"
+    ],
+    "interpretation": "Tests whether an Amputee-trained action representation transfers to Intact recordings; it does not synthesize or reconstruct an Intact-looking EMG signal."
+  },
+  "action_mapping": {
+    "0": "Rest",
+    "1": "Thumb up",
+    "2": "Index and middle extension; other fingers flexed",
+    "3": "Ring and little flexion; other fingers extended",
+    "4": "Thumb opposing little-finger base",
+    "5": "Finger abduction",
+    "6": "Fist",
+    "7": "Pointing index",
+    "8": "Extended-finger adduction",
+    "9": "Wrist supination, middle-finger axis",
+    "10": "Wrist pronation, middle-finger axis",
+    "11": "Wrist supination, little-finger axis",
+    "12": "Wrist pronation, little-finger axis",
+    "13": "Wrist flexion",
+    "14": "Wrist extension",
+    "15": "Wrist radial deviation",
+    "16": "Wrist ulnar deviation",
+    "17": "Wrist extension with closed hand"
+  },
+  "protocol": {
+    "window_ms": 200,
+    "stride_ms": 50,
+    "minimum_label_purity": 0.8,
+    "sampling_rate_hz": 100,
+    "features": "recording-normalized EMG; channel-pooled MAV/RMS/WL",
+    "training_class_cap": 4000
+  },
+  "interpretation": {
+    "part_1": "A strong Part 1 result would mean the Amputee EMG contains repeatable action information that transfers to an unseen Amputee person.",
+    "part_2": "Part 2 asks whether the action representation learned from Amputee EMG also recognizes Intact action recordings. It is a transfer test, not a physiological simulation.",
+    "next_step": "If Part 1 improves but Part 2 remains weak, the model is learning user-specific Amputee patterns rather than a shared action language."
+  }
+}

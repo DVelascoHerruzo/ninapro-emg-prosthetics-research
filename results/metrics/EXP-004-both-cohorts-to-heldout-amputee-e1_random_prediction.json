@@ -1,0 +1,13 @@
+{
+  "source_file": "S1_E1_A1.mat",
+  "subject": "S1",
+  "exercise": 1,
+  "common_rate_sample_start": 19535,
+  "window_duration_ms": 200,
+  "actual_action_id": 4,
+  "actual_action": "Thumb opposing little-finger base",
+  "predicted_action_id": 0,
+  "predicted_action": "Rest",
+  "confidence": 0.56279927769219,
+  "correct": false
+}

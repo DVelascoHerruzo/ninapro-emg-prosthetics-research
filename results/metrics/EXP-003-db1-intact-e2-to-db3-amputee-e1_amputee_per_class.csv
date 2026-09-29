@@ -1,0 +1,19 @@
+action_id,action,support,precision,recall,f1
+0,Rest,75988,0.4006009963887498,1.0,0.5720415698998392
+1,Thumb up,7066,0.0,0.0,0.0
+2,Index and middle extension; other fingers flexed,7168,0.0,0.0,0.0
+3,Ring and little flexion; other fingers extended,6808,0.0,0.0,0.0
+4,Thumb opposing little-finger base,6934,0.0,0.0,0.0
+5,Finger abduction,6608,0.0,0.0,0.0
+6,Fist,6345,0.0,0.0,0.0
+7,Pointing index,7563,0.0,0.0,0.0
+8,Extended-finger adduction,7210,0.0,0.0,0.0
+9,"Wrist supination, middle-finger axis",7378,0.0,0.0,0.0
+10,"Wrist pronation, middle-finger axis",5948,0.0,0.0,0.0
+11,"Wrist supination, little-finger axis",7170,0.0,0.0,0.0
+12,"Wrist pronation, little-finger axis",6219,0.0,0.0,0.0
+13,Wrist flexion,6256,0.0,0.0,0.0
+14,Wrist extension,6218,0.0,0.0,0.0
+15,Wrist radial deviation,6656,0.0,0.0,0.0
+16,Wrist ulnar deviation,6476,0.0,0.0,0.0
+17,Wrist extension with closed hand,5674,0.0,0.0,0.0

@@ -1,0 +1,10 @@
+{
+  "raw_emg": "results\\figures\\EXP-001-intact-e1-logreg_raw_emg.png",
+  "amplitude": "results\\figures\\EXP-001-intact-e1-logreg_amplitude.png",
+  "spectrum": "results\\figures\\EXP-001-intact-e1-logreg_spectrum.png",
+  "correlation": "results\\figures\\EXP-001-intact-e1-logreg_correlation.png",
+  "window_classes": "results\\figures\\EXP-001-intact-e1-logreg_window_classes.png",
+  "reliability": "results\\figures\\EXP-001-intact-e1-logreg_reliability.png",
+  "confusion": "results\\figures\\EXP-001-intact-e1-logreg_test_confusion.png",
+  "feature_importance": "results\\figures\\EXP-001-intact-e1-logreg_feature_importance.png"
+}

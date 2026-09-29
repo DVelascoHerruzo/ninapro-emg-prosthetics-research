@@ -1,0 +1,5 @@
+scenario,probabilities,multiclass_brier,top_label_ece
+cross_subject,raw,0.8224708938714381,0.12065947326844327
+cross_subject,calibrated_or_raw_fallback,0.4563144836651677,0.1101608860186334
+within_subject,raw,0.5515428706784079,0.16600013947993544
+within_subject,calibrated_or_raw_fallback,0.20023553928283727,0.05964538850416669

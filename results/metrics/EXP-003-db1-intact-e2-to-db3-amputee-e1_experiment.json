@@ -1,0 +1,515 @@
+{
+  "experiment_id": "EXP-003-db1-intact-e2-to-db3-amputee-e1",
+  "source": {
+    "database": "Ninapro DB1",
+    "cohort": "Intact",
+    "exercise": 2,
+    "files": [
+      "S10_A1_E2.xlsx",
+      "S17_A1_E2.xlsx",
+      "S18_A1_E2.xlsx",
+      "S19_A1_E2.xlsx",
+      "S1_A1_E2.xlsx",
+      "S20_A1_E2.xlsx",
+      "S21_A1_E2.xlsx",
+      "S22_A1_E2.xlsx",
+      "S23_A1_E2.xlsx",
+      "S24_A1_E2.xlsx",
+      "S25_A1_E2.xlsx",
+      "S26_A1_E2.xlsx",
+      "S27_A1_E2.xlsx",
+      "S2_A1_E2.xlsx",
+      "S3_A1_E2.xlsx",
+      "S4_A1_E2.xlsx",
+      "S5_A1_E2.xlsx",
+      "S6_A1_E2.xlsx",
+      "S7_A1_E2.xlsx",
+      "S8_A1_E2.xlsx",
+      "S9_A1_E2.xlsx"
+    ],
+    "subjects": [
+      "S1",
+      "S10",
+      "S17",
+      "S18",
+      "S19",
+      "S2",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S24",
+      "S25",
+      "S26",
+      "S27",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "representation_selection": "Intact validation macro-F1 on active actions only",
+    "selected_representation": "raw",
+    "note": "Original DB1 MAT files are absent from this workspace; used converter-generated XLSX exports. Results inherit their precision/format limits."
+  },
+  "target": {
+    "database": "Ninapro DB3",
+    "cohort": "Amputee",
+    "exercise": 1,
+    "files": [
+      "S10_E1_A1.mat",
+      "S11_E1_A1.mat",
+      "S1_E1_A1.mat",
+      "S2_E1_A1.mat",
+      "S3_E1_A1.mat",
+      "S4_E1_A1.mat",
+      "S5_E1_A1.mat",
+      "S6_E1_A1.mat",
+      "S7_E1_A1.mat",
+      "S8_E1_A1.mat",
+      "S9_E1_A1.mat"
+    ],
+    "subjects": [
+      "S1",
+      "S10",
+      "S11",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "source_sample_rate_hz": 2000,
+    "target_sample_rate_hz": 100,
+    "resampling": "polyphase 1/20 per rerepetition; discrete labels sampled at block centers"
+  },
+  "action_mapping": {
+    "source": "DB1 Exercise 2 / movement taxonomy B",
+    "target": "DB3 Exercise 1 / movement taxonomy B",
+    "labels": {
+      "0": "Rest",
+      "1": "Thumb up",
+      "2": "Index and middle extension; other fingers flexed",
+      "3": "Ring and little flexion; other fingers extended",
+      "4": "Thumb opposing little-finger base",
+      "5": "Finger abduction",
+      "6": "Fist",
+      "7": "Pointing index",
+      "8": "Extended-finger adduction",
+      "9": "Wrist supination, middle-finger axis",
+      "10": "Wrist pronation, middle-finger axis",
+      "11": "Wrist supination, little-finger axis",
+      "12": "Wrist pronation, little-finger axis",
+      "13": "Wrist flexion",
+      "14": "Wrist extension",
+      "15": "Wrist radial deviation",
+      "16": "Wrist ulnar deviation",
+      "17": "Wrist extension with closed hand"
+    },
+    "source_url": "https://ninapro.hevs.ch/figures/SData_Movements.png"
+  },
+  "source_split": {
+    "train": [
+      "S17",
+      "S18",
+      "S19",
+      "S2",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S26",
+      "S27",
+      "S3",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "validation": [
+      "S24",
+      "S25",
+      "S5"
+    ],
+    "source_test": [
+      "S1",
+      "S10",
+      "S4",
+      "S6"
+    ]
+  },
+  "window": {
+    "duration_ms": 200,
+    "stride_ms": 50,
+    "minimum_label_purity": 0.8,
+    "source_rate_hz": 100,
+    "common_rate_hz": 100,
+    "features": "per-channel MAV/RMS/WL pooled by mean/std/median/p10/p90; 15 features; no channel identity alignment",
+    "representations_compared": {
+      "normalized": {
+        "accuracy": 0.348710775966918,
+        "balanced_accuracy": 0.14844123973658097,
+        "macro_f1_all_including_rest": 0.10540981590138171,
+        "macro_f1_active_actions": 0.090703369021968,
+        "active_action_accuracy": 0.11331991507899308,
+        "rest_recall": 0.5345041457204414,
+        "active_windows": 36269,
+        "windows": 82220
+      },
+      "raw": {
+        "accuracy": 0.41052055460958403,
+        "balanced_accuracy": 0.19925011519644695,
+        "macro_f1_all_including_rest": 0.1608356547573033,
+        "macro_f1_active_actions": 0.14591439228272024,
+        "active_action_accuracy": 0.1676087016460338,
+        "rest_recall": 0.6022502230636982,
+        "active_windows": 36269,
+        "windows": 82220
+      }
+    }
+  },
+  "window_counts": {
+    "intact_source": {
+      "candidate": 602007,
+      "accepted": 574873
+    },
+    "amputee_target": {
+      "candidate": 196417,
+      "accepted": 189685
+    }
+  },
+  "source_test_metrics": {
+    "accuracy": 0.5674955351009754,
+    "balanced_accuracy": 0.1861197586715223,
+    "macro_f1_all_including_rest": 0.1626536133264075,
+    "macro_f1_active_actions": 0.12629538492150894,
+    "active_action_accuracy": 0.14182624383246029,
+    "rest_recall": 0.8774731710405521,
+    "active_windows": 46007,
+    "windows": 109185
+  },
+  "target_amputee_metrics": {
+    "accuracy": 0.4006009963887498,
+    "balanced_accuracy": 0.05555555555555555,
+    "macro_f1_all_including_rest": 0.03178008721665773,
+    "macro_f1_active_actions": 0.0,
+    "active_action_accuracy": 0.0,
+    "rest_recall": 1.0,
+    "active_windows": 113697,
+    "windows": 189685,
+    "calibrated_argmax": {
+      "accuracy": 0.4006009963887498,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.03178008721665773,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 113697,
+      "windows": 189685
+    },
+    "source_majority_baseline": {
+      "accuracy": 0.4006009963887498,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.03178008721665773,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 113697,
+      "windows": 189685
+    }
+  },
+  "target_per_class": [
+    {
+      "action_id": 0,
+      "action": "Rest",
+      "support": 75988,
+      "precision": 0.4006009963887498,
+      "recall": 1.0,
+      "f1": 0.5720415698998392
+    },
+    {
+      "action_id": 1,
+      "action": "Thumb up",
+      "support": 7066,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 2,
+      "action": "Index and middle extension; other fingers flexed",
+      "support": 7168,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 3,
+      "action": "Ring and little flexion; other fingers extended",
+      "support": 6808,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 4,
+      "action": "Thumb opposing little-finger base",
+      "support": 6934,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 5,
+      "action": "Finger abduction",
+      "support": 6608,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 6,
+      "action": "Fist",
+      "support": 6345,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 7,
+      "action": "Pointing index",
+      "support": 7563,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 8,
+      "action": "Extended-finger adduction",
+      "support": 7210,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 9,
+      "action": "Wrist supination, middle-finger axis",
+      "support": 7378,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 10,
+      "action": "Wrist pronation, middle-finger axis",
+      "support": 5948,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 11,
+      "action": "Wrist supination, little-finger axis",
+      "support": 7170,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 12,
+      "action": "Wrist pronation, little-finger axis",
+      "support": 6219,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 13,
+      "action": "Wrist flexion",
+      "support": 6256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 14,
+      "action": "Wrist extension",
+      "support": 6218,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 15,
+      "action": "Wrist radial deviation",
+      "support": 6656,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 16,
+      "action": "Wrist ulnar deviation",
+      "support": 6476,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "action_id": 17,
+      "action": "Wrist extension with closed hand",
+      "support": 5674,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ],
+  "target_per_subject": [
+    {
+      "subject": "S1",
+      "accuracy": 0.3951695203537816,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.03147124692963445,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 10668,
+      "windows": 17638
+    },
+    {
+      "subject": "S10",
+      "accuracy": 0.27071693230606364,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.023671408147942444,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 12400,
+      "windows": 17003
+    },
+    {
+      "subject": "S11",
+      "accuracy": 0.5560228998714803,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.03970399292519731,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 7600,
+      "windows": 17118
+    },
+    {
+      "subject": "S2",
+      "accuracy": 0.5321555594425981,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.03859163981699944,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 8024,
+      "windows": 17151
+    },
+    {
+      "subject": "S3",
+      "accuracy": 0.6040002298982701,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.04183985476088099,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 6890,
+      "windows": 17399
+    },
+    {
+      "subject": "S4",
+      "accuracy": 0.2597685344333677,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.022911487073757404,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 12920,
+      "windows": 17454
+    },
+    {
+      "subject": "S5",
+      "accuracy": 0.28097421203438394,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.0243715732911814,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 12547,
+      "windows": 17450
+    },
+    {
+      "subject": "S6",
+      "accuracy": 0.258066364834661,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.022792152575315843,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 12946,
+      "windows": 17449
+    },
+    {
+      "subject": "S7",
+      "accuracy": 0.25787494123178184,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.02277871218256193,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 12628,
+      "windows": 17016
+    },
+    {
+      "subject": "S8",
+      "accuracy": 0.5623529411764706,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.03999330655957162,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 7440,
+      "windows": 17000
+    },
+    {
+      "subject": "S9",
+      "accuracy": 0.43352737108249545,
+      "balanced_accuracy": 0.05555555555555555,
+      "macro_f1_all_including_rest": 0.0336022240452101,
+      "macro_f1_active_actions": 0.0,
+      "active_action_accuracy": 0.0,
+      "rest_recall": 1.0,
+      "active_windows": 9634,
+      "windows": 17007
+    }
+  ],
+  "random_amputee_window_prediction": {
+    "source_file": "S10_E1_A1.mat",
+    "subject": "S10",
+    "exercise": 1,
+    "common_rate_sample_start": 72265,
+    "window_duration_ms": 200,
+    "actual_action_id": 14,
+    "actual_action": "Wrist extension",
+    "predicted_action_id": 0,
+    "predicted_action": "Rest",
+    "confidence": 0.772176902600754,
+    "correct": false
+  },
+  "limitations": [
+    "Intact MAT originals are absent; source input uses generated XLSX exports.",
+    "This uses DB1 Exercise 2 to DB3 Exercise 1 based on shared movement taxonomy B, not all DB1/DB3 exercises.",
+    "Electrode layouts differ; features pool channels without claiming electrode-to-electrode equivalence.",
+    "All Amputee participants are external test; no Amputee labels are used to train, calibrate, select features, or choose the representation.",
+    "This is offline movement classification, not real-time prosthetic control or safety evidence.",
+    "Test cohort has 11 people; person-level uncertainty remains substantial."
+  ]
+}

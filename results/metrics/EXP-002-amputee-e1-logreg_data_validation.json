@@ -1,0 +1,132 @@
+{
+  "experiment_id": "EXP-002-amputee-e1-logreg",
+  "cohort": "Amputee",
+  "exercise_id": 1,
+  "file_count": 11,
+  "subjects": [
+    "S1",
+    "S10",
+    "S11",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9"
+  ],
+  "samples_per_file_min": 1759960,
+  "samples_per_file_max": 1825008,
+  "emg_channel_counts": [
+    12
+  ],
+  "glove_channel_counts": [
+    22
+  ],
+  "raw_sample_counts_by_restimulus": {
+    "0": 7939973,
+    "1": 725826,
+    "2": 735816,
+    "3": 699802,
+    "4": 712326,
+    "5": 680357,
+    "6": 653364,
+    "7": 775105,
+    "8": 740538,
+    "9": 756808,
+    "10": 614067,
+    "11": 736199,
+    "12": 640650,
+    "13": 645080,
+    "14": 641483,
+    "15": 684367,
+    "16": 666662,
+    "17": 586278
+  },
+  "quality_flags": [
+    {
+      "subject": "S10",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 375166
+    },
+    {
+      "subject": "S11",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 1004583
+    },
+    {
+      "subject": "S1",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 701249
+    },
+    {
+      "subject": "S2",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 1369330
+    },
+    {
+      "subject": "S3",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 1418066
+    },
+    {
+      "subject": "S4",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 284919
+    },
+    {
+      "subject": "S5",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 567775
+    },
+    {
+      "subject": "S6",
+      "finite_values": true,
+      "constant_emg_channels": [
+        8,
+        9
+      ],
+      "extreme_value_plateau_samples": 3610068,
+      "large_step_channel_events": 67822
+    },
+    {
+      "subject": "S7",
+      "finite_values": true,
+      "constant_emg_channels": [
+        8,
+        9
+      ],
+      "extreme_value_plateau_samples": 3523302,
+      "large_step_channel_events": 2760
+    },
+    {
+      "subject": "S8",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 1294919
+    },
+    {
+      "subject": "S9",
+      "finite_values": true,
+      "constant_emg_channels": [],
+      "extreme_value_plateau_samples": 24,
+      "large_step_channel_events": 774776
+    }
+  ]
+}

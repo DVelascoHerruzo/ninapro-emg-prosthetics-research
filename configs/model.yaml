@@ -1,0 +1,8 @@
+baseline: DummyClassifier(strategy='prior')
+model: LogisticRegression(class_weight='balanced', max_iter=2000)
+features:
+- MAV
+- RMS
+- waveform_length
+scaling: StandardScaler fitted on training data only
+random_state: 42

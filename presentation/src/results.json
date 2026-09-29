@@ -1,0 +1,751 @@
+{
+  "title": "Reading the Signal",
+  "subtitle": "First recognize Amputee actions, then test what transfers",
+  "presentationMinutes": 9,
+  "experiments": [
+    {
+      "experimentId": "EXP-001-intact-e1-logreg",
+      "cohort": "Intact",
+      "exercise": 1,
+      "subjects": 21,
+      "trainSubjects": 14,
+      "validationSubjects": 3,
+      "testSubjects": 4,
+      "testSubjectIds": [
+        "S1",
+        "S10",
+        "S4",
+        "S6"
+      ],
+      "emgChannels": [
+        10
+      ],
+      "gloveChannels": [
+        22
+      ],
+      "movementClasses": 13,
+      "testWindows": 4239,
+      "windowLengthSamples": 200,
+      "windowStrideSamples": 50,
+      "candidateWindows": 42427,
+      "acceptedWindows": 22387,
+      "rejectedWindows": 20040,
+      "restSharePercent": 61.8,
+      "crossSubject": {
+        "accuracyPercent": 65.5,
+        "balancedAccuracyPercent": 18.7,
+        "macroF1Percent": 18.3,
+        "weightedF1Percent": 57.4,
+        "coveragePercent": 94.5,
+        "majorityBaseline": null
+      },
+      "withinSubject": {
+        "accuracyPercent": 68.7,
+        "balancedAccuracyPercent": 23.8,
+        "macroF1Percent": 27.0,
+        "weightedF1Percent": 60.1,
+        "coveragePercent": 76.3
+      },
+      "perClass": [
+        {
+          "class": 0,
+          "support": 2618,
+          "recallPercent": 98.7,
+          "f1Percent": 85.5
+        },
+        {
+          "class": 1,
+          "support": 163,
+          "recallPercent": 3.7,
+          "f1Percent": 5.6
+        },
+        {
+          "class": 2,
+          "support": 101,
+          "recallPercent": 10.9,
+          "f1Percent": 14.2
+        },
+        {
+          "class": 3,
+          "support": 171,
+          "recallPercent": 40.9,
+          "f1Percent": 24.2
+        },
+        {
+          "class": 4,
+          "support": 119,
+          "recallPercent": 40.3,
+          "f1Percent": 40.9
+        },
+        {
+          "class": 5,
+          "support": 113,
+          "recallPercent": 35.4,
+          "f1Percent": 45.7
+        },
+        {
+          "class": 6,
+          "support": 112,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 7,
+          "support": 136,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 8,
+          "support": 148,
+          "recallPercent": 6.1,
+          "f1Percent": 8.3
+        },
+        {
+          "class": 9,
+          "support": 135,
+          "recallPercent": 0.7,
+          "f1Percent": 1.5
+        },
+        {
+          "class": 10,
+          "support": 156,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 11,
+          "support": 113,
+          "recallPercent": 4.4,
+          "f1Percent": 8.3
+        },
+        {
+          "class": 12,
+          "support": 154,
+          "recallPercent": 1.9,
+          "f1Percent": 3.6
+        }
+      ],
+      "heldOutSubjects": [
+        {
+          "subject": "S1",
+          "windows": 1060,
+          "macroF1Percent": 15.6,
+          "accuracyPercent": 76.0
+        },
+        {
+          "subject": "S10",
+          "windows": 1058,
+          "macroF1Percent": 17.7,
+          "accuracyPercent": 66.5
+        },
+        {
+          "subject": "S4",
+          "windows": 1058,
+          "macroF1Percent": 7.1,
+          "accuracyPercent": 57.8
+        },
+        {
+          "subject": "S6",
+          "windows": 1063,
+          "macroF1Percent": 25.3,
+          "accuracyPercent": 61.6
+        }
+      ],
+      "featureImportance": [
+        {
+          "name": "rms_ch10",
+          "macroF1DropPoints": 17.46,
+          "stdPoints": 0.55
+        },
+        {
+          "name": "mav_ch08",
+          "macroF1DropPoints": 13.79,
+          "stdPoints": 0.63
+        },
+        {
+          "name": "rms_ch08",
+          "macroF1DropPoints": 12.06,
+          "stdPoints": 0.38
+        },
+        {
+          "name": "rms_ch05",
+          "macroF1DropPoints": 10.48,
+          "stdPoints": 0.56
+        },
+        {
+          "name": "rms_ch04",
+          "macroF1DropPoints": 9.89,
+          "stdPoints": 0.16
+        },
+        {
+          "name": "rms_ch01",
+          "macroF1DropPoints": 9.81,
+          "stdPoints": 0.49
+        },
+        {
+          "name": "rms_ch02",
+          "macroF1DropPoints": 9.64,
+          "stdPoints": 0.16
+        },
+        {
+          "name": "rms_ch07",
+          "macroF1DropPoints": 8.88,
+          "stdPoints": 0.36
+        }
+      ],
+      "caveats": [
+        "No clinical diagnosis or real-world control validation.",
+        "Sampling frequency is not specified in the inspected files; windows are in samples.",
+        "No demographic attributes are present for demographic fairness analysis.",
+        "Window-level observations overlap and are not independent people.",
+        "Glove regression is a separate optional task and was not run unless enabled."
+      ]
+    },
+    {
+      "experimentId": "EXP-002-amputee-e1-logreg",
+      "cohort": "Amputee",
+      "exercise": 1,
+      "subjects": 11,
+      "trainSubjects": 7,
+      "validationSubjects": 2,
+      "testSubjects": 2,
+      "testSubjectIds": [
+        "S1",
+        "S4"
+      ],
+      "emgChannels": [
+        12
+      ],
+      "gloveChannels": [
+        22
+      ],
+      "movementClasses": 18,
+      "testWindows": 71302,
+      "windowLengthSamples": 200,
+      "windowStrideSamples": 50,
+      "candidateWindows": 392656,
+      "acceptedWindows": 385511,
+      "rejectedWindows": 7145,
+      "restSharePercent": 33.1,
+      "crossSubject": {
+        "accuracyPercent": 33.1,
+        "balancedAccuracyPercent": 5.6,
+        "macroF1Percent": 2.8,
+        "weightedF1Percent": 16.4,
+        "coveragePercent": 99.8,
+        "majorityBaseline": {
+          "accuracyPercent": 33.1,
+          "balancedAccuracyPercent": 5.6,
+          "macroF1Percent": 2.8
+        }
+      },
+      "withinSubject": {
+        "accuracyPercent": 42.2,
+        "balancedAccuracyPercent": 9.6,
+        "macroF1Percent": 9.0,
+        "weightedF1Percent": 28.5,
+        "coveragePercent": 91.1
+      },
+      "perClass": [
+        {
+          "class": 0,
+          "support": 23583,
+          "recallPercent": 100.0,
+          "f1Percent": 49.7
+        },
+        {
+          "class": 1,
+          "support": 3101,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 2,
+          "support": 3085,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 3,
+          "support": 3088,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 4,
+          "support": 3086,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 5,
+          "support": 3081,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 6,
+          "support": 3089,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 7,
+          "support": 3081,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 8,
+          "support": 3091,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 9,
+          "support": 3080,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 10,
+          "support": 2066,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 11,
+          "support": 3087,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 12,
+          "support": 2242,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 13,
+          "support": 2299,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 14,
+          "support": 3090,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 15,
+          "support": 2437,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 16,
+          "support": 2572,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        },
+        {
+          "class": 17,
+          "support": 2144,
+          "recallPercent": 0.0,
+          "f1Percent": 0.0
+        }
+      ],
+      "heldOutSubjects": [
+        {
+          "subject": "S1",
+          "windows": 35847,
+          "macroF1Percent": 3.2,
+          "accuracyPercent": 39.7
+        },
+        {
+          "subject": "S4",
+          "windows": 35455,
+          "macroF1Percent": 2.3,
+          "accuracyPercent": 26.4
+        }
+      ],
+      "featureImportance": [
+        {
+          "name": "mav_ch07",
+          "macroF1DropPoints": 2.37,
+          "stdPoints": 0.06
+        },
+        {
+          "name": "mav_ch01",
+          "macroF1DropPoints": 2.29,
+          "stdPoints": 0.08
+        },
+        {
+          "name": "mav_ch04",
+          "macroF1DropPoints": 1.96,
+          "stdPoints": 0.05
+        },
+        {
+          "name": "rms_ch02",
+          "macroF1DropPoints": 1.79,
+          "stdPoints": 0.05
+        },
+        {
+          "name": "mav_ch02",
+          "macroF1DropPoints": 1.78,
+          "stdPoints": 0.02
+        },
+        {
+          "name": "mav_ch12",
+          "macroF1DropPoints": 1.69,
+          "stdPoints": 0.06
+        },
+        {
+          "name": "mav_ch11",
+          "macroF1DropPoints": 1.67,
+          "stdPoints": 0.03
+        },
+        {
+          "name": "mav_ch06",
+          "macroF1DropPoints": 1.56,
+          "stdPoints": 0.06
+        }
+      ],
+      "caveats": [
+        "No clinical diagnosis or real-world control validation.",
+        "Sampling frequency is not specified in the inspected files; windows are in samples.",
+        "No demographic attributes are present for demographic fairness analysis.",
+        "Window-level observations overlap and are not independent people.",
+        "Glove regression is a separate optional task and was not run unless enabled."
+      ]
+    }
+  ],
+  "transfer": {
+    "experimentId": "EXP-004-both-cohorts-to-heldout-amputee-e1",
+    "sourceSubjects": 21,
+    "sourceTrainSubjects": 20,
+    "sourceValidationSubjects": 5,
+    "sourceTestSubjects": 4,
+    "targetSubjects": 3,
+    "sourceFileCount": 21,
+    "selectedRepresentation": "normalized",
+    "windowDurationMs": 200,
+    "windowStrideMs": 50,
+    "targetWindows": 52092,
+    "activeActionAccuracyPercent": 4.8,
+    "accuracyPercent": 8.9,
+    "balancedAccuracyPercent": 5.1,
+    "macroF1Percent": 4.4,
+    "activeMacroF1Percent": 4.2,
+    "majorityAccuracyPercent": 40.4,
+    "majorityMacroF1Percent": 3.2,
+    "randomPrediction": {
+      "source_file": "S1_E1_A1.mat",
+      "subject": "S1",
+      "exercise": 1,
+      "common_rate_sample_start": 19535,
+      "window_duration_ms": 200,
+      "actual_action_id": 4,
+      "actual_action": "Thumb opposing little-finger base",
+      "predicted_action_id": 0,
+      "predicted_action": "Rest",
+      "confidence": 0.56279927769219,
+      "correct": false
+    },
+    "perClass": [
+      {
+        "action": "Rest",
+        "actionId": 0,
+        "support": 21064,
+        "recallPercent": 15.0,
+        "f1Percent": 22.7
+      },
+      {
+        "action": "Thumb up",
+        "actionId": 1,
+        "support": 1792,
+        "recallPercent": 4.5,
+        "f1Percent": 4.5
+      },
+      {
+        "action": "Index and middle extension; other fingers flexed",
+        "actionId": 2,
+        "support": 1800,
+        "recallPercent": 16.2,
+        "f1Percent": 7.5
+      },
+      {
+        "action": "Ring and little flexion; other fingers extended",
+        "actionId": 3,
+        "support": 1782,
+        "recallPercent": 2.2,
+        "f1Percent": 2.6
+      },
+      {
+        "action": "Thumb opposing little-finger base",
+        "actionId": 4,
+        "support": 1882,
+        "recallPercent": 2.7,
+        "f1Percent": 3.3
+      },
+      {
+        "action": "Finger abduction",
+        "actionId": 5,
+        "support": 1870,
+        "recallPercent": 2.9,
+        "f1Percent": 3.2
+      },
+      {
+        "action": "Fist",
+        "actionId": 6,
+        "support": 1865,
+        "recallPercent": 0.9,
+        "f1Percent": 1.3
+      },
+      {
+        "action": "Pointing index",
+        "actionId": 7,
+        "support": 2271,
+        "recallPercent": 9.8,
+        "f1Percent": 5.3
+      },
+      {
+        "action": "Extended-finger adduction",
+        "actionId": 8,
+        "support": 2081,
+        "recallPercent": 4.5,
+        "f1Percent": 4.6
+      },
+      {
+        "action": "Wrist supination, middle-finger axis",
+        "actionId": 9,
+        "support": 2273,
+        "recallPercent": 11.9,
+        "f1Percent": 5.2
+      },
+      {
+        "action": "Wrist pronation, middle-finger axis",
+        "actionId": 10,
+        "support": 1423,
+        "recallPercent": 0.0,
+        "f1Percent": 0.0
+      },
+      {
+        "action": "Wrist supination, little-finger axis",
+        "actionId": 11,
+        "support": 2190,
+        "recallPercent": 0.3,
+        "f1Percent": 0.6
+      },
+      {
+        "action": "Wrist pronation, little-finger axis",
+        "actionId": 12,
+        "support": 1499,
+        "recallPercent": 2.5,
+        "f1Percent": 1.7
+      },
+      {
+        "action": "Wrist flexion",
+        "actionId": 13,
+        "support": 1573,
+        "recallPercent": 3.5,
+        "f1Percent": 4.0
+      },
+      {
+        "action": "Wrist extension",
+        "actionId": 14,
+        "support": 1780,
+        "recallPercent": 7.1,
+        "f1Percent": 5.5
+      },
+      {
+        "action": "Wrist radial deviation",
+        "actionId": 15,
+        "support": 1900,
+        "recallPercent": 5.0,
+        "f1Percent": 4.1
+      },
+      {
+        "action": "Wrist ulnar deviation",
+        "actionId": 16,
+        "support": 1671,
+        "recallPercent": 2.2,
+        "f1Percent": 2.2
+      },
+      {
+        "action": "Wrist extension with closed hand",
+        "actionId": 17,
+        "support": 1376,
+        "recallPercent": 0.7,
+        "f1Percent": 0.5
+      }
+    ],
+    "perSubject": [
+      {
+        "subject": "S1",
+        "windows": 17638,
+        "activeMacroF1Percent": 2.9,
+        "accuracyPercent": 5.8
+      },
+      {
+        "subject": "S4",
+        "windows": 17454,
+        "activeMacroF1Percent": 4.4,
+        "accuracyPercent": 12.1
+      },
+      {
+        "subject": "S8",
+        "windows": 17000,
+        "activeMacroF1Percent": 4.3,
+        "accuracyPercent": 8.9
+      }
+    ],
+    "caveats": [
+      "Intact MAT originals are absent; source input uses generated XLSX exports.",
+      "This uses DB1 Exercise 2 to DB3 Exercise 1 based on shared movement taxonomy B, not all DB1/DB3 exercises.",
+      "Electrode layouts differ; features pool channels without claiming electrode-to-electrode equivalence.",
+      "Amputee training and validation subjects are included, while held-out Amputee test subjects remain disjoint from fitting, calibration, and representation selection.",
+      "This is offline movement classification, not real-time prosthetic control or safety evidence.",
+      "Test cohort has 11 people; person-level uncertainty remains substantial."
+    ],
+    "sourceNote": "Training combines Intact DB1 E2 XLSX exports with Amputee DB3 E1 MAT recordings. Original DB1 MAT files are absent; exported values inherit their precision/format limits."
+  },
+  "twoPart": {
+    "experimentId": "EXP-005-two-part-action-study",
+    "purpose": "First learn to classify actions within Amputee users; then test whether that Amputee-trained representation transfers to Intact users.",
+    "part1": {
+      "accuracy": 0.23483452353528372,
+      "balanced_accuracy": 0.0625409352029301,
+      "macro_f1": 0.060001577085837275,
+      "active_action_accuracy": 0.03609642903184221,
+      "active_action_macro_f1": 0.037091162543408385,
+      "windows": 52092,
+      "active_windows": 31028,
+      "prediction_counts": {
+        "0": 20455,
+        "1": 1265,
+        "2": 2508,
+        "3": 1646,
+        "4": 1608,
+        "5": 4606,
+        "6": 958,
+        "7": 968,
+        "8": 1681,
+        "9": 2713,
+        "10": 1598,
+        "11": 1986,
+        "12": 66,
+        "13": 3892,
+        "14": 568,
+        "15": 871,
+        "16": 2825,
+        "17": 1878
+      },
+      "split": {
+        "train": [
+          "S10",
+          "S11",
+          "S2",
+          "S5",
+          "S6",
+          "S7"
+        ],
+        "validation": [
+          "S3",
+          "S9"
+        ],
+        "test": [
+          "S1",
+          "S4",
+          "S8"
+        ]
+      },
+      "training_windows_after_class_cap": 69326
+    },
+    "part2": {
+      "accuracy": 0.40290501975706133,
+      "balanced_accuracy": 0.04158474536527093,
+      "macro_f1": 0.03341434474812663,
+      "active_action_accuracy": 0.0026799979384631244,
+      "active_action_macro_f1": 0.004064239118088952,
+      "windows": 136660,
+      "active_windows": 58209,
+      "prediction_counts": {
+        "0": 110410,
+        "5": 15489,
+        "15": 10310,
+        "16": 451
+      },
+      "amputee_training_subjects": [
+        "S10",
+        "S11",
+        "S2",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "intact_test_subjects": [
+        "S1",
+        "S10",
+        "S22",
+        "S4",
+        "S6"
+      ],
+      "interpretation": "Tests whether an Amputee-trained action representation transfers to Intact recordings; it does not synthesize or reconstruct an Intact-looking EMG signal."
+    },
+    "interpretation": {
+      "part_1": "A strong Part 1 result would mean the Amputee EMG contains repeatable action information that transfers to an unseen Amputee person.",
+      "part_2": "Part 2 asks whether the action representation learned from Amputee EMG also recognizes Intact action recordings. It is a transfer test, not a physiological simulation.",
+      "next_step": "If Part 1 improves but Part 2 remains weak, the model is learning user-specific Amputee patterns rather than a shared action language."
+    },
+    "protocol": {
+      "window_ms": 200,
+      "stride_ms": 50,
+      "minimum_label_purity": 0.8,
+      "sampling_rate_hz": 100,
+      "features": "recording-normalized EMG; channel-pooled MAV/RMS/WL",
+      "training_class_cap": 4000
+    },
+    "actions": {
+      "0": "Rest",
+      "1": "Thumb up",
+      "2": "Index and middle extension; other fingers flexed",
+      "3": "Ring and little flexion; other fingers extended",
+      "4": "Thumb opposing little-finger base",
+      "5": "Finger abduction",
+      "6": "Fist",
+      "7": "Pointing index",
+      "8": "Extended-finger adduction",
+      "9": "Wrist supination, middle-finger axis",
+      "10": "Wrist pronation, middle-finger axis",
+      "11": "Wrist supination, little-finger axis",
+      "12": "Wrist pronation, little-finger axis",
+      "13": "Wrist flexion",
+      "14": "Wrist extension",
+      "15": "Wrist radial deviation",
+      "16": "Wrist ulnar deviation",
+      "17": "Wrist extension with closed hand"
+    },
+    "cnn": {
+      "experimentId": "EXP-008-amputee-pytorch-repetition-decisions",
+      "device": "cpu",
+      "metrics": {
+        "accuracy": 0.2768595041322314,
+        "balanced_accuracy": 0.27507252737515897,
+        "macro_f1": 0.27879562181815465,
+        "active_action_accuracy": 0.2511013215859031,
+        "active_action_macro_f1": 0.2745493545872065,
+        "units": 242
+      },
+      "predictionCounts": {},
+      "trainingWindows": 27000,
+      "testWindows": 242,
+      "splitMeaning": "One final prediction is made per action repetition by averaging its window probabilities."
+    }
+  },
+  "primaryExperiment": "EXP-008-amputee-pytorch-repetition-decisions",
+  "comparisonNote": "The current result is a two-part study: Amputee-to-Amputee action recognition first, then Amputee-to-Intact transfer. These answer different questions and must not be collapsed into one score.",
+  "prostheticUseBoundary": "Offline movement decoding only. No closed-loop prosthesis, latency, safety, clinical, or functional-benefit evaluation was performed."
+}

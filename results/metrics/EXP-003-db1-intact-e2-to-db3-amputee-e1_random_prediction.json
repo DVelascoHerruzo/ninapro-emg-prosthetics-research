@@ -1,0 +1,13 @@
+{
+  "source_file": "S10_E1_A1.mat",
+  "subject": "S10",
+  "exercise": 1,
+  "common_rate_sample_start": 72265,
+  "window_duration_ms": 200,
+  "actual_action_id": 14,
+  "actual_action": "Wrist extension",
+  "predicted_action_id": 0,
+  "predicted_action": "Rest",
+  "confidence": 0.772176902600754,
+  "correct": false
+}

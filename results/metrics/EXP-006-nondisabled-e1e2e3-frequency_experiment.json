@@ -1,0 +1,28 @@
+{
+  "experiment_id": "EXP-006-nondisabled-e1e2e3-frequency",
+  "cohort": "Non-disabled (Intact)",
+  "purpose": "Intact-to-intact (non-disabled-only) reference: same-cohort exercise/action recognition, held-out repetitions.",
+  "seed": 42,
+  "window_samples": 400,
+  "stride_samples": 100,
+  "min_purity": 0.8,
+  "exercises": [
+    "A",
+    "B",
+    "C"
+  ],
+  "metrics": {
+    "cohort": "Non-disabled (Intact) held-out repetitions",
+    "exercise_accuracy": 0.622899974153528,
+    "accuracy": 0.5422589816490049,
+    "balanced_accuracy": 0.23558149514837948,
+    "macro_f1": 0.24916071002909537,
+    "classes": 55.0,
+    "test_windows": 3869.0
+  },
+  "per_exercise_macro_f1": {
+    "A": 0.4245124599572386,
+    "B": 0.06592402067515189,
+    "C": 0.19229640855361216
+  }
+}

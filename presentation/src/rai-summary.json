@@ -1,0 +1,22 @@
+{
+  "experimentId": "EXP-007-rai-insights-movement-detection",
+  "cohort": "Disabled (Amputee) E1 - movement-vs-rest gate",
+  "note": "Placeholder values. Regenerate by running notebooks/03_responsible_ai_dashboard.ipynb, then copy results/metrics/EXP-007-rai-insights-movement-detection_summary.json fields into this file.",
+  "overallTest": {
+    "accuracyPercent": null,
+    "balancedAccuracyPercent": null,
+    "macroF1Percent": null
+  },
+  "worstSubject": {
+    "subject": null,
+    "balancedAccuracyPercent": null
+  },
+  "topFeatures": [],
+  "raiComponents": ["Data analysis", "Model overview & fairness", "Error analysis", "Feature importance", "Counterfactuals", "Causal analysis"],
+  "mitigations": [
+    "Per-user calibration recording before first prosthetic use instead of one global threshold",
+    "Debounce/hysteresis rule requiring sustained movement-classified windows before actuation",
+    "Electrode signal-quality monitoring on the channels the model relies on most",
+    "Per-user threshold calibration if the causal effect of EMG amplitude on the gate is heterogeneous across subjects"
+  ]
+}

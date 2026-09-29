@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "skills": {
+    "apple-container": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/apple-container/SKILL.md",
+      "computedHash": "157b91522a3eb866e06c1a5cad18059cd435066c461a716c36095c8659988632"
+    },
+    "atlassian": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/atlassian/SKILL.md",
+      "computedHash": "3e166809ae2345a7358f47ed00778c05fc94811f41e4c6979d00af3509f556d3"
+    },
+    "azure-devops": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/azure-devops/SKILL.md",
+      "computedHash": "f9e4726092ff167a4c397ae77b34a3ba50eadb7f404adac206c5af9573fd57f7"
+    },
+    "deep-research": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/deep-research/SKILL.md",
+      "computedHash": "ccc3c698451ef7db2a0bed240e40186bbc6ae1bdf9a7f25816d4d9f681f3c9b9"
+    },
+    "elevenlabs": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/elevenlabs/SKILL.md",
+      "computedHash": "6c38008e881c40652aba09fca72f12930f2b7635950b433fc51ac6d959964f0f"
+    },
+    "gmail": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gmail/SKILL.md",
+      "computedHash": "ab1d10f67b94d0d23bbaf42eece3f6ff821eea5410b2e45670187d054be6801e"
+    },
+    "google-calendar": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-calendar/SKILL.md",
+      "computedHash": "59dfa50c0076b1f103a1c46fd9d7826bfd428718e18eb04c8e235f627bc50963"
+    },
+    "google-chat": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-chat/SKILL.md",
+      "computedHash": "f0c749327c0bc734cd97ac2bb3af996fe21e65b789c1ebeaabbd6e9b5542c46f"
+    },
+    "google-docs": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-docs/SKILL.md",
+      "computedHash": "a0e6540db37442f04dea7c2c4e66fcf087fb487eb6555d656aca2907ba9aa4a7"
+    },
+    "google-drive": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-drive/SKILL.md",
+      "computedHash": "c706d967ea832b9cf48882de0acc19c42550ecaad7a85fc27fda4fcd06b18591"
+    },
+    "google-sheets": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-sheets/SKILL.md",
+      "computedHash": "d542c7b55d91cec9d1185c084723cfdfb58f8c6c48715bc651e5d9f3db834145"
+    },
+    "google-slides": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-slides/SKILL.md",
+      "computedHash": "dd78feec9e6af4f44d0e89162f77176b4292d41c4496ecbcde98dbd70f23abf1"
+    },
+    "google-tts": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-tts/SKILL.md",
+      "computedHash": "c0929b1644ab0c0ae15bbbdb637d121f3d3f349a195a33029cf6bf2073d902c5"
+    },
+    "grok-build": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/grok-build/SKILL.md",
+      "computedHash": "5af6bef3135a55da9bc33447065394823879b11fe517ee14ea2fd239c2c700a9"
+    },
+    "imagen": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/imagen/SKILL.md",
+      "computedHash": "3431e6484e2bf11173cf970acf3208d7006a6db280672bbc79f579db6a738b70"
+    },
+    "jules": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/jules/SKILL.md",
+      "computedHash": "15e499e2eb7716e65a0c73d0e94b52aaba60e44ca1eb790619801d934f00e4ed"
+    },
+    "manus": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/manus/SKILL.md",
+      "computedHash": "0ae40ecee78fa0daed84c90b05626409e5518b6ebe893288fbb5965739fd7bcb"
+    },
+    "mssql": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/mssql/SKILL.md",
+      "computedHash": "f50393d205a789ac1dbbf7a7ca0a4cb2f53b63fcb3108d8b86a89eee5e39bb1d"
+    },
+    "mysql": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/mysql/SKILL.md",
+      "computedHash": "2a86e13cf353cc7dfcb0b2c1d4bee905916e70658fe63b2059536e804e1eb25b"
+    },
+    "notebooklm": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/notebooklm/SKILL.md",
+      "computedHash": "df64eabbf0d845dc60c22d741cdbbf77166ea0139eed9aed8b34cfac7fa22138"
+    },
+    "outline": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/outline/SKILL.md",
+      "computedHash": "8ca06482713cd99ed4e8243facb54a7ae04bbd1ca4f6ff2aa9b61235a6881c57"
+    },
+    "postgres": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/postgres/SKILL.md",
+      "computedHash": "a20af7913049c0e16eb9237589c4baf4ce95245955d375cb809e1d7afd794477"
+    },
+    "telegram": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/telegram/SKILL.md",
+      "computedHash": "8b4492a1c2f35063d177e312e0ec78936c5e5f138166a4700723c9f868e44ef4"
+    },
+    "whatsapp": {
+      "source": "sanjay3290/ai-skills",
+      "sourceType": "github",
+      "skillPath": "skills/whatsapp/SKILL.md",
+      "computedHash": "a73a96bd0010dcb25110b015e7da5174351328df66cb550848610c87b99902b1"
+    }
+  }
+}

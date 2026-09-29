@@ -1,0 +1,12 @@
+experiment_id: EXP-002-amputee-e1-logreg
+task: movement_classification
+cohort: Amputee
+exercise_id: 1
+data_dir: Database
+input: emg
+target: restimulus
+split: grouped_by_subject
+window_samples: 200
+stride_samples: 50
+minimum_label_purity: 0.8
+seed: 42

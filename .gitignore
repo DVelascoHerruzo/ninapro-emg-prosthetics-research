@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+node_modules/
+presentation/dist/
+.env
+.env.*
+
+Database/**/*.mat
+Database/**/*.xlsx
+Database/**/excel_output/
+data/raw/**
+data/interim/**
+data/processed/**
+results/models/*.joblib
+
+# Editor/agent tooling, not part of the research project
+.obsidian/
+.agents/
+.claude/
+agent/
+package-lock.json
+graphify-out/
