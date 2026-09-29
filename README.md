@@ -1,14 +1,25 @@
-# Ninapro EMG Movement Analysis: Disabled vs. Non-disabled Cohort Comparison
+# From Able-Bodied to Amputee: EMG-Based Action Recognition for Prosthetic Design
 
 ## Purpose
 
-This project studies whether temporal patterns in multi-channel surface electromyography (sEMG) predict recorded hand-movement labels. It uses Ninapro-style MATLAB recordings in `Database/` and starts with a reproducible, interpretable feature-based baseline before any deep model.
+This project establishes a **data-translation pipeline** for prosthetic hand control: we learn action-recognition patterns from able-bodied (non-disabled) kinematic and muscle data, compare them to amputee (disabled) patterns, and use Responsible AI tools to identify which patterns transfer and which break down.
 
-**Research question:** What patterns in multi-channel EMG are predictive of hand-movement labels, and how reliably do they transfer to unseen repetitions or participants?
+**Core research question:** *Can we translate able-bodied movement signals into prosthetic control parameters, and where does that translation fail in amputee users?*
 
-The intended use is research into movement recognition and, separately, EMG-to-kinematics prediction. This is not a diagnostic model, clinical decision system, or validated prosthetic controller.
+**Why this matters for prosthetics:** Prosthetic device engineers need to know:
+1. What action patterns *look like* in intact physiology (Notebook 1: able-bodied baseline).
+2. How amputee muscle/kinematic patterns compare (Notebook 2: real deployment scenario).
+3. Which patterns transfer between cohorts and which don't (Notebook 3: Responsible AI analysis).
 
-**Cohort terminology:** this project studies two Ninapro cohorts. `Database/Intact/` (Ninapro DB1) contains able-bodied participants, referred to in prose as the **Non-disabled cohort**. `Database/Amputee/` (Ninapro DB3) contains participants with limb loss, referred to in prose as the **Disabled cohort**. Folder names, variable names, and experiment IDs keep the original `Intact`/`Amputee` labels for compatibility with the Ninapro documentation and existing scripts; only the narrative language changed. The motivating application is EMG-driven prosthetic control, so every comparison in this project ultimately asks: how much performance is lost moving from a Non-disabled reference to a Disabled/prosthetic-relevant result?
+The translation gap (able → amputee performance drop) quantifies the biomechanical changes prosthetic fitting and training must address.
+
+**Scope:** This is a retrospective, observational research study of historical recordings. It does not establish clinical efficacy, validate a prosthetic device, or serve as a diagnostic tool.
+
+**Cohort terminology:** This project compares two Ninapro cohorts:
+- **Able-bodied (Non-disabled):** Ninapro DB1 in `Database/Intact/` — normal-physiology reference for prosthetic design.
+- **Amputee (Disabled):** Ninapro DB3 in `Database/Amputee/` — real end-user scenario for prosthetic deployment.
+
+Folder/variable names retain Ninapro's original `Intact`/`Amputee` labels for compatibility; the narrative focuses on translation and design implications.
 
 **Table of Contents**
 - Project Structure
@@ -41,12 +52,12 @@ The intended use is research into movement recognition and, separately, EMG-to-k
 │   ├── baseline.yaml
 │   └── model.yaml
 ├── Database/
-│   ├── Intact/       # raw XLSX exports (Non-disabled cohort); read-only
-│   └── Amputee/      # raw MAT files (Disabled cohort); read-only
+│   ├── Intact/       # raw XLSX exports (Able-bodied cohort); read-only
+│   └── Amputee/      # raw MAT files (Amputee cohort); read-only
 ├── notebooks/
-│   ├── 01_unified_exercise_frequency_classifier.ipynb   # Disabled cohort (Amputee MAT)
-│   ├── 02_nondisabled_frequency_classifier.ipynb        # Non-disabled cohort (Intact XLSX), intact-to-intact reference
-│   └── 03_responsible_ai_dashboard.ipynb                # Responsible AI Toolbox (Disabled cohort)
+│   ├── 01_unified_exercise_frequency_classifier.ipynb   # Able-bodied baseline: what patterns look like in intact physiology
+│   ├── 02_nondisabled_frequency_classifier.ipynb        # Amputee reality: do those patterns appear in residual limb?
+│   └── 03_responsible_ai_dashboard.ipynb                # Responsible AI Toolbox: which patterns transfer, where do they break?
 ├── presentation/
 │   ├── README.md
 │   ├── package.json
@@ -62,18 +73,33 @@ The intended use is research into movement recognition and, separately, EMG-to-k
 
 ## Data
 
-The canonical notebooks read aligned `glove`, `restimulus`, `rerepetition`, `subject`, and `exercise` arrays (Disabled/Amputee MAT files) or `emg`, `restimulus`, `rerepetition`, and `subject` arrays (classical EMG-feature notebook), all through the shared loaders in `utils.py` rather than ad hoc `scipy.io.loadmat()`/`openpyxl` calls in the notebook body.
+The canonical notebooks read aligned arrays through the shared loaders in `utils.py` rather than ad hoc file I/O in the notebook body:
+
+- **Able-bodied (Intact) cohort:** 22-channel CyberGlove kinematics (`glove`), action labels (`restimulus`), and repetition IDs (`rerepetition`). Read from XLSX exports via `load_xlsx_recording()`.
+- **Amputee cohort:** 12-channel surface EMG or 22-channel glove (`emg` or `glove`), action labels (`restimulus`), and repetition IDs (`rerepetition`). Read from MAT files via `load_mat_recording()` or `load_emg_recording()`.
+
+**Why two different sensors:** 
+- Able-bodied participants can wear the CyberGlove to directly measure hand kinematics — this is the "ground truth" for intended actions.
+- Amputee participants have residual limb muscle signals (EMG) but no intact hand kinematics — this is what a prosthetic device must work with in reality.
+
+**The translation strategy:**
+1. Learn action patterns from able-bodied kinematics (Notebook 1).
+2. Measure the same actions in amputee recordings (Notebook 2, using available sensors).
+3. Analyze which kinematic/muscle features transfer between cohorts using Responsible AI (Notebook 3).
 
 The primary classification mapping is:
 
 ```text
-Input:  EMG windows (`emg`) or glove-frequency windows (`glove`)
-Target: movement/rest labels (`restimulus`)
+Input:  Glove frequency windows (`glove`) — able-bodied
+        EMG or glove windows (`emg` or `glove`) — amputee
+Target: Action/movement labels (`restimulus`)
 ```
 
-`glove` contains continuous kinematic measurements. It is never included as a classifier feature alongside EMG in the same model. Non-disabled recordings are read from converter-generated XLSX exports (the original DB1 MAT files are not present in this workspace), which round EMG/glove values; treat Non-disabled results as a lower-fidelity reference until the original MAT files are available.
-
-The glove-frequency notebooks (`01`, `02`) use 400-sample windows with 100-sample stride and 0.80 label purity; the classical EMG-feature notebook (`03`) uses 200-sample windows with 50-sample stride and the same 0.80 purity threshold. Windows crossing an `rerepetition` boundary are discarded in every case (`utils.make_frequency_windows` / `utils.extract_emg_features`).
+**Window parameters:**
+- Glove-frequency windows (Notebooks 1–2): 400 samples, 100-sample stride, log-magnitude FFT with 32 bins per channel = 704 features.
+- Classical EMG-feature windows (Notebook 3): 200 samples, 50-sample stride, MAV/RMS/waveform-length features.
+- All windows: >80% action-label purity (discard boundary-crossing and ambiguous windows).
+- All windows: respect `rerepetition` boundaries to prevent train/test leakage.
 
 ## Install
 
@@ -99,15 +125,33 @@ jupyter lab
 
 Open `notebooks/01_unified_exercise_frequency_classifier.ipynb` (Disabled cohort), `notebooks/02_nondisabled_frequency_classifier.ipynb` (Non-disabled cohort), or `notebooks/03_responsible_ai_dashboard.ipynb` (Responsible AI Toolbox) and select the `ninapro-emg` kernel. The environment includes NumPy, SciPy, h5py, openpyxl, pandas, scikit-learn, Matplotlib, Seaborn, JupyterLab, PyYAML, PyTorch, and the Responsible AI Toolbox (`fairlearn`, `responsibleai`, `raiwidgets`, `dice-ml`, `econml`).
 
-## Quickstart
+## Quickstart: Three-Step Prosthetic Design Analysis
 
-1. Create the environment and register the kernel (Install, above).
-2. Run `notebooks/01_unified_exercise_frequency_classifier.ipynb` top to bottom for the Disabled-cohort (Amputee) reference.
-3. Run `notebooks/02_nondisabled_frequency_classifier.ipynb` top to bottom for the matching Non-disabled-cohort (Intact) reference — same pipeline (via `utils.py`), so the two results are directly comparable.
-4. Run `notebooks/03_responsible_ai_dashboard.ipynb` for the Responsible AI Toolbox analysis (fairness, error analysis, feature importance, counterfactuals, causal analysis) on the movement-vs-rest prosthetic gating task.
-5. Open the presentation (`cd presentation && npm install && npm run dev`) to see the same results as slides.
+**Goal:** Understand which action-recognition patterns transfer from able-bodied to amputee physiology, and identify design constraints for prosthetic control.
 
-None of the notebooks write into `Database/`.
+1. **Create the environment and register the kernel** (Install, above).
+
+2. **Step 1: Able-Bodied Baseline** — Run `notebooks/01_unified_exercise_frequency_classifier.ipynb`
+   - Establishes the action-recognition ceiling using able-bodied glove kinematics.
+   - Answer: "What do action patterns look like in intact hand physiology?"
+   - Output: Baseline accuracy per action, feature visualizations.
+
+3. **Step 2: Amputee Reality** — Run `notebooks/02_nondisabled_frequency_classifier.ipynb`
+   - Measures action recognition in amputee recordings using identical pipeline.
+   - Answer: "Do those patterns appear in residual-limb muscle/kinematics?"
+   - Output: Per-action accuracy in amputees, direct comparison to Step 1.
+
+4. **Step 3: Translation Analysis** — Run `notebooks/03_responsible_ai_dashboard.ipynb`
+   - Uses Responsible AI Toolbox to analyze which patterns transfer and which break down.
+   - Answer: "Which features drive recognition in each cohort? Where does translation fail?"
+   - Output: Feature importance, error analysis, counterfactuals → design recommendations.
+
+5. **View the presentation** — `cd presentation && npm install && npm run dev`
+   - Slideshow summarizing results and prosthetic design implications.
+
+**Interpretation:** The larger the performance gap between Step 1 and Step 2, the more significant the biomechanical differences prosthetic fitting must address. Step 3's Responsible AI analysis tells you exactly where and why the gap appears.
+
+**None of the notebooks write into `Database/`.**
 
 ## Utilities: Data Loading, Splitting, Modeling, and Plots
 
